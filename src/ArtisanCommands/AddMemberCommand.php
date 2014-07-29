@@ -16,10 +16,10 @@ class AddMemberCommand extends ArtisanCommand
         $name = new Name($this->argument('first_name'), $this->argument('last_name'));
         $member = new Member($name);
 
-        EntityManager::persist($member);
-        EntityManager::flush();
+        $this->entityManager->persist($member);
+        $this->entityManager->flush();
 
-        $queriedMember = EntityManager::find('Example\Entities\Member', $member->getId());
+        $queriedMember = $this->entityManager->find('Example\Entities\Member', $member->getId());
 
         $this->info("Member created with name: " . $queriedMember->getName());
     }

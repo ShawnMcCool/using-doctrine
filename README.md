@@ -1,14 +1,19 @@
-doctrine-examples
+Doctrine Examples
 =================
 This is a repository to show simple examples of how to do things with Doctrine.
 
-I'm using things like Laravel facades to keep it as simple as possible. I'm adding no namespaces, etc. These details may change later, but I'll update this document accordingly.
+I decided (for now) to just throw the examples into artisan commands.
 
-Find examples here: In the Artisan Commands folder
+# Examples
 
-Find classes dumped here: In the models folder (these will probably be moved and organized later)
+Entity Interactions: [src/ArtisanCommands](src/ArtisanCommands)
+
+Entities: [src/Entities](src/Entities)
+
+Value Objects: [src/ValueObjects](src/ValueObjects)
 
 # Installation
+
 1. Install Virtualbox, Vagrant, and Ansible
 2. run `vagrant up`
 3. run `composer install` inside the vm in the /vagrant folder

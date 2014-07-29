@@ -1,5 +1,6 @@
 <?php namespace Example\ArtisanCommands;
 
+use Doctrine\ORM\EntityManager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -7,12 +8,19 @@ use Symfony\Component\Console\Input\InputArgument;
 abstract class ArtisanCommand extends Command
 {
     /**
-     * Create a new command instance.
-     * @return \AddMemberCommand
+     * @var EntityManager
      */
-    public function __construct()
+    protected $entityManager;
+
+    /**
+     * Create a new command instance.
+     * @param EntityManager $entityManager
+     * @return \Example\ArtisanCommands\ArtisanCommand
+     */
+    public function __construct(EntityManager $entityManager)
     {
         parent::__construct();
+        $this->entityManager = $entityManager;
     }
 
     /**
