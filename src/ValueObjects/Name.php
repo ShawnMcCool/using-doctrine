@@ -1,4 +1,4 @@
-<?php
+<?php namespace Example\ValueObjects;
 
 use Doctrine\ORM\Mapping AS ORM;
 
@@ -20,5 +20,10 @@ class Name
     public function getFullName()
     {
         return $this->firstName . ' ' . $this->lastName;
+    }
+
+    public function __toString()
+    {
+        return $this->getFullName();
     }
 } 

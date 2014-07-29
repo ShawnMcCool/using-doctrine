@@ -11,4 +11,4 @@
 |
 */
 
-Artisan::resolve(AddMemberCommand::class);
+Artisan::resolve(Example\ArtisanCommands\AddMemberCommand::class);
