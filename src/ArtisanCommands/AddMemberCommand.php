@@ -21,7 +21,7 @@ class AddMemberCommand extends ArtisanCommand
 
         $queriedMember = $this->entityManager->find('Example\Entities\Member', $member->getId());
 
-        $this->info("Member created with name: " . $queriedMember->getName());
+        $this->info("Member # {$queriedMember->getId()} created with name: {$queriedMember->getName()}");
     }
 
     protected function getArguments()
