@@ -24,13 +24,13 @@ final class Member
     private $name;
 
     /**
-     * @param MemberId $memberId
+     * @param MemberId $id
      * @param Name $name
      * @return Member
      */
-    public function __construct(MemberId $memberId = null, Name $name)
+    public function __construct(MemberId $id = null, Name $name)
     {
-        $this->id = $memberId ?: MemberId::generateNew();
+        $this->id = $id ?: MemberId::generateNew();
         $this->name = $name;
     }
 
