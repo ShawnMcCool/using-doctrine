@@ -25,9 +25,9 @@ class Member
     /**
      * @param \Example\ValueObjects\Name $name
      */
-    public function __construct(Name $name)
+    public function __construct(MemberId $memberId = null, Name $name)
     {
-        $this->id = MemberId::generateNew();
+        $this->id = $memberId ?: MemberId::generateNew();
         $this->name = $name;
     }
 
