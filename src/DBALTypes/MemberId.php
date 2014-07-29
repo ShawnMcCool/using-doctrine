@@ -3,7 +3,7 @@
 use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
-class MemberId extends Type
+final class MemberId extends Type
 {
     const MEMBERID = 'memberid'; // modify to match your type name
 

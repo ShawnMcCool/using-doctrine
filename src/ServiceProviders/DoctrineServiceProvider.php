@@ -3,7 +3,7 @@
 use Illuminate\Support\ServiceProvider;
 use Doctrine\DBAL\Types\Type;
 
-class DoctrineServiceProvider extends ServiceProvider
+final class DoctrineServiceProvider extends ServiceProvider
 {
     protected $defer = false;
 

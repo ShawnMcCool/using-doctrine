@@ -4,7 +4,7 @@ use Doctrine\ORM\Mapping AS ORM;
 use Rhumsaa\Uuid\Uuid;
 
 /** @ORM\Embeddable */
-class MemberId
+final class MemberId
 {
     /** @ORM\Column(type = "string") */
     private $id;

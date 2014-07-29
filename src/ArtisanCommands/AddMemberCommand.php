@@ -1,12 +1,11 @@
 <?php namespace Example\ArtisanCommands;
 
-use EntityManager;
 use Example\Entities\Member;
 use Example\ValueObjects\Name;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class AddMemberCommand extends ArtisanCommand
+final class AddMemberCommand extends ArtisanCommand
 {
     protected $name = 'app:add-member';
     protected $description = 'Add a member';

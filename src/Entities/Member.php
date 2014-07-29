@@ -8,7 +8,7 @@ use Example\ValueObjects\Name;
  * @ORM\Entity
  * @ORM\Table(name="members")
  */
-class Member
+final class Member
 {
     /**
      * @var MemberId

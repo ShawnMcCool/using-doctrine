@@ -3,7 +3,7 @@
 use Doctrine\ORM\Mapping AS ORM;
 
 /** @ORM\Embeddable */
-class Name
+final class Name
 {
     /** @ORM\Column(type = "string") */
     private $firstName;
