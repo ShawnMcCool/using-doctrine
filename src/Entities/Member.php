@@ -11,19 +11,22 @@ use Example\ValueObjects\Name;
 class Member
 {
     /**
+     * @var MemberId
      * @ORM\Id
      * @ORM\Column(type="memberid")
      */
     private $id;
 
     /**
-     * @var \Example\ValueObjects\Name
+     * @var Name
      * @ORM\Embedded(class = "Example\ValueObjects\Name")
      */
     private $name;
 
     /**
-     * @param \Example\ValueObjects\Name $name
+     * @param MemberId $memberId
+     * @param Name $name
+     * @return Member
      */
     public function __construct(MemberId $memberId = null, Name $name)
     {
@@ -32,7 +35,7 @@ class Member
     }
 
     /**
-     * @return \Example\ValueObjects\MemberId
+     * @return MemberId
      */
     public function getId()
     {
@@ -40,7 +43,7 @@ class Member
     }
 
     /**
-     * @return \Example\ValueObjects\Name
+     * @return Name
      */
     public function getName()
     {
