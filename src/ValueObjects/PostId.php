@@ -4,7 +4,7 @@ use Doctrine\ORM\Mapping AS ORM;
 use Rhumsaa\Uuid\Uuid;
 
 /** @ORM\Embeddable */
-final class MemberId
+final class PostId
 {
     /**
      * @var string
@@ -13,7 +13,7 @@ final class MemberId
     private $id;
 
     /**
-     * @return MemberId
+     * @return PostId
      */
     public static function generateNew()
     {
@@ -22,7 +22,7 @@ final class MemberId
 
     /**
      * @param $id
-     * @return MemberId
+     * @return PostId
      */
     public function __construct($id)
     {
@@ -46,10 +46,10 @@ final class MemberId
     }
 
     /**
-     * @param MemberId $otherId
+     * @param PostId $otherId
      * @return bool
      */
-    public function equals(MemberId $otherId)
+    public function equals(PostId $otherId)
     {
         return $this->id == (string) $otherId;
     }

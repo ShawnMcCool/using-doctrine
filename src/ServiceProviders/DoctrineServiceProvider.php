@@ -14,5 +14,6 @@ final class DoctrineServiceProvider extends ServiceProvider
     public function register()
     {
         Type::addType('memberid', 'Example\DBALTypes\MemberId');
+        Type::addType('postid', 'Example\DBALTypes\PostId');
     }
 }

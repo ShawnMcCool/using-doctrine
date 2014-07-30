@@ -24,6 +24,11 @@ final class Member
     private $name;
 
     /**
+     * @ORM\OneToMany(targetEntity="Example\Entities\Post", mappedBy="Example\Entities\Member")
+     **/
+    private $posts;
+
+    /**
      * @param Name $name
      * @return Member
      */
@@ -47,5 +52,13 @@ final class Member
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }
