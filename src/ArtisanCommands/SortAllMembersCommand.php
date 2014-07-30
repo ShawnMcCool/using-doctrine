@@ -5,14 +5,15 @@ use Example\Entities\Member;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-final class GetAllMembersCommand extends ArtisanCommand
+// php artisan app:sort-all-members
+final class SortAllMembersCommand extends ArtisanCommand
 {
-    protected $name = 'app:get-all-members';
-    protected $description = 'Get all members';
+    protected $name = 'app:sort-all-members';
+    protected $description = 'Sort members by last name.';
 
     public function fire()
     {
-        $members = $this->entityManager->createQuery('SELECT m FROM Example\Entities\Member m')->getResult();
+        $members = $this->entityManager->createQuery('SELECT m FROM Example\Entities\Member m order by m.name.lastName desc')->getResult();
 
         /** @var Member $member */
         foreach ($members as $member) {
