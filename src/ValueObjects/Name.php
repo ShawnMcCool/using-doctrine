@@ -55,12 +55,12 @@ final class Name
     }
 
     /**
-     * @param Name $name
+     * @param Name $other
      * @return bool
      */
-    public function equals(Name $name)
+    public function equals(Name $other)
     {
-        return $this->getFirstName() == $name->getFirstName() &&
-            $this->getLastName() == $name->getLastName();
+        return $this->firstName == $other->firstName &&
+            $this->lastName == $other->lastName;
     }
 } 

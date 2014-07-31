@@ -1,7 +1,6 @@
 <?php namespace Example\ValueObjects;
 
 use Doctrine\ORM\Mapping AS ORM;
-use Rhumsaa\Uuid\Uuid;
 
 /** @ORM\Embeddable */
 final class MemberId

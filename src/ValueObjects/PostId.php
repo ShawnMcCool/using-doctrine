@@ -1,7 +1,6 @@
 <?php namespace Example\ValueObjects;
 
 use Doctrine\ORM\Mapping AS ORM;
-use Rhumsaa\Uuid\Uuid;
 
 /** @ORM\Embeddable */
 final class PostId
@@ -11,14 +10,6 @@ final class PostId
      * @ORM\Column(type = "uuid")
      */
     private $id;
-
-    /**
-     * @return PostId
-     */
-    public static function generateNew()
-    {
-        return new static((string) Uuid::uuid1());
-    }
 
     /**
      * @param string $id
@@ -47,11 +38,11 @@ final class PostId
     }
 
     /**
-     * @param PostId $otherId
+     * @param PostId $other
      * @return bool
      */
-    public function equals(PostId $otherId)
+    public function equals(PostId $other)
     {
-        return (string) $this == (string) $otherId;
+        return $this->id == $other->id;
     }
 } 

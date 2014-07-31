@@ -19,12 +19,12 @@ final class Member
 
     /**
      * @var Name
-     * @ORM\Embedded(class = "Example\ValueObjects\Name")
+     * @ORM\Embedded(class = "Name")
      */
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Example\Entities\Post", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="author")
      *
      **/
     private $posts;
