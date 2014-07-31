@@ -8,7 +8,7 @@ final class PostId
 {
     /**
      * @var string
-     * @ORM\Column(type = "string")
+     * @ORM\Column(type = "uuid")
      */
     private $id;
 
@@ -21,20 +21,21 @@ final class PostId
     }
 
     /**
+     * @param string $id
+     * @return PostId
+     */
+    public static function fromString($id)
+    {
+        return new static($id);
+    }
+
+    /**
      * @param $id
      * @return PostId
      */
     public function __construct($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
@@ -51,6 +52,6 @@ final class PostId
      */
     public function equals(PostId $otherId)
     {
-        return $this->id == (string) $otherId;
+        return (string) $this == (string) $otherId;
     }
 } 

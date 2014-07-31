@@ -2,6 +2,7 @@
 
 use Doctrine\ORM\Mapping AS ORM;
 use Example\ValueObjects\PostId;
+use Rhumsaa\Uuid\Uuid;
 
 /**
  * @ORM\Entity
@@ -10,9 +11,8 @@ use Example\ValueObjects\PostId;
 final class Post
 {
     /**
-     * @var PostId
      * @ORM\Id
-     * @ORM\Column(type="postid")
+     * @ORM\Column(type="guid")
      */
     private $id;
 
@@ -23,8 +23,8 @@ final class Post
     private $body;
 
     /**
-     * @var \Example\Entities\Member
-     * @ORM\ManyToOne(targetEntity="Example\Entities\Member", inversedBy="Example\Entities\Post")
+     * @var Member
+     * @ORM\ManyToOne(targetEntity="Member", inversedBy="Post")
      */
     private $author;
 
@@ -35,10 +35,18 @@ final class Post
      */
     public function __construct(Member $author, $subject, $body)
     {
-        $this->id = PostId::generateNew();
+        $this->id = (string) Uuid::uuid1();
         $this->author = $author;
         $this->subject = $subject;
         $this->body = $body;
+    }
+
+    /**
+     * @return PostId
+     */
+    public function getId()
+    {
+        return new PostId($this->id);
     }
 
     /**
@@ -58,7 +66,7 @@ final class Post
     }
 
     /**
-     * @return \Example\Entities\Member
+     * @return Member
      */
     public function getAuthor()
     {

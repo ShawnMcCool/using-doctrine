@@ -122,7 +122,6 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Mitch\LaravelDoctrine\LaravelDoctrineServiceProvider',
-        'Example\ServiceProviders\DoctrineServiceProvider',
 	),
 
 	/*

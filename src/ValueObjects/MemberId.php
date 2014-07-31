@@ -8,16 +8,17 @@ final class MemberId
 {
     /**
      * @var string
-     * @ORM\Column(type = "string")
+     * @ORM\Column(type = "uuid")
      */
     private $id;
 
     /**
+     * @param $id
      * @return MemberId
      */
-    public static function generateNew()
+    public static function fromString($id)
     {
-        return new static((string) Uuid::uuid1());
+        return new static($id);
     }
 
     /**
@@ -27,14 +28,6 @@ final class MemberId
     public function __construct($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
     /**
@@ -51,6 +44,6 @@ final class MemberId
      */
     public function equals(MemberId $otherId)
     {
-        return $this->id == (string) $otherId;
+        return (string) $this == (string) $otherId;
     }
 } 

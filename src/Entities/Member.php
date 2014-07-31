@@ -3,6 +3,7 @@
 use Doctrine\ORM\Mapping AS ORM;
 use Example\ValueObjects\MemberId;
 use Example\ValueObjects\Name;
+use Rhumsaa\Uuid\Uuid;
 
 /**
  * @ORM\Entity
@@ -11,9 +12,8 @@ use Example\ValueObjects\Name;
 final class Member
 {
     /**
-     * @var MemberId
      * @ORM\Id
-     * @ORM\Column(type="memberid")
+     * @ORM\Column(type="guid")
      */
     private $id;
 
@@ -35,7 +35,7 @@ final class Member
      */
     public function __construct(Name $name)
     {
-        $this->id = MemberId::generateNew();
+        $this->id = (string) Uuid::uuid1();
         $this->name = $name;
     }
 
@@ -44,7 +44,7 @@ final class Member
      */
     public function getId()
     {
-        return $this->id;
+        return MemberId::fromString($this->id);
     }
 
     /**
@@ -70,7 +70,6 @@ final class Member
      */
     public function addPost($subject, $body)
     {
-        $post = new Post($this, $subject, $body);
-        return $post;
+        return new Post($this, $subject, $body);
     }
 }
