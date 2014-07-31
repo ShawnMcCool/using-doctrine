@@ -17,3 +17,4 @@ Artisan::resolve(Example\ArtisanCommands\SortAllMembersCommand::class);
 Artisan::resolve(Example\ArtisanCommands\GetMemberByIdCommand::class);
 Artisan::resolve(Example\ArtisanCommands\AddMemberPostCommand::class);
 Artisan::resolve(Example\ArtisanCommands\CompareNamesCommand::class);
+Artisan::resolve(Example\ArtisanCommands\AddTagToPostCommand::class);

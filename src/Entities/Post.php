@@ -22,9 +22,12 @@ final class Post
     /** @ORM\Column(type="text") */
     private $body;
 
+    /** @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts") */
+    private $tags;
+
     /**
      * @var Member
-     * @ORM\ManyToOne(targetEntity="Member", inversedBy="Post")
+     * @ORM\ManyToOne(targetEntity="Member", inversedBy="posts")
      */
     private $author;
 
@@ -71,5 +74,21 @@ final class Post
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param Tag $tag
+     */
+    public function addTag(Tag $tag)
+    {
+        $this->tags[] = $tag;
     }
 } 

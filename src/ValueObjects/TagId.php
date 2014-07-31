@@ -2,7 +2,7 @@
 
 use Doctrine\ORM\Mapping AS ORM;
 
-final class PostId
+final class TagId
 {
     /**
      * @var string
@@ -11,8 +11,8 @@ final class PostId
     private $id;
 
     /**
-     * @param string $id
-     * @return PostId
+     * @param $id
+     * @return TagId
      */
     public static function fromString($id)
     {
@@ -21,7 +21,7 @@ final class PostId
 
     /**
      * @param $id
-     * @return PostId
+     * @return TagId
      */
     public function __construct($id)
     {
@@ -37,11 +37,11 @@ final class PostId
     }
 
     /**
-     * @param PostId $other
+     * @param TagId $otherId
      * @return bool
      */
-    public function equals(PostId $other)
+    public function equals(TagId $otherId)
     {
-        return $this->id == $other->id;
+        return (string) $this == (string) $otherId;
     }
 } 

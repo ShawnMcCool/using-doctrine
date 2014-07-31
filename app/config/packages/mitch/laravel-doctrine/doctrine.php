@@ -8,13 +8,13 @@ return [
     ],
 
     'proxy' => [
-        'auto_generate' => false,
+        'auto_generate' => true,
         'directory'     => null,
         'namespace'     => null
     ],
 
     // Available: null, apc, xcache, redis, memcache
-    'cache_provider' => null,
+    'cache_provider' => 'apc',
 
     'cache' => [
         'redis' => [

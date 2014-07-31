@@ -2,7 +2,6 @@
 
 use Doctrine\ORM\Mapping AS ORM;
 
-/** @ORM\Embeddable */
 final class MemberId
 {
     /**

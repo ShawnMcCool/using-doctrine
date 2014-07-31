@@ -9,7 +9,7 @@ use Rhumsaa\Uuid\Uuid;
  * @ORM\Entity
  * @ORM\Table(name="members")
  */
-final class Member
+class Member
 {
     /**
      * @ORM\Id
@@ -19,14 +19,11 @@ final class Member
 
     /**
      * @var Name
-     * @ORM\Embedded(class = "Name")
+     * @ORM\Embedded(class = "Example\ValueObjects\Name")
      */
     private $name;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Post", mappedBy="author")
-     *
-     **/
+    /** @ORM\OneToMany(targetEntity="Post", mappedBy="author") */
     private $posts;
 
     /**

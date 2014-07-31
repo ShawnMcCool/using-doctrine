@@ -2,6 +2,8 @@
 
 use EntityManager;
 use Example\Entities\Member;
+use Example\Entities\Post;
+use Example\Entities\Tag;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -21,11 +23,15 @@ final class GetMemberByIdCommand extends ArtisanCommand
             return;
         }
 
-        $this->info($member->getId() . ' ' . $member->getName());
+        $this->info("member: {$member->getId()} {$member->getName()}");
 
-        /** @var \Example\Entities\Post $post */
+        /** @var Post $post */
         foreach ($member->getPosts() as $post) {
-            $this->info("\t" . $post->getSubject() . ' - ' . $post->getBody());
+            $this->info("\tpost: {$post->getId()} {$post->getSubject()} - {$post->getBody()}");
+            /** @var Tag $tag */
+            foreach ($post->getTags() as $tag) {
+                $this->info("\t\ttag: {$tag->getName()}");
+            }
         }
     }
 
