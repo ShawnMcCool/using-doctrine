@@ -13,6 +13,7 @@ final class GetMemberByIdCommand extends ArtisanCommand
 
     public function fire()
     {
+        /** @var Member $member */
         $member = $this->entityManager->find('Example\Entities\Member', $this->argument('id'));
 
         if ( ! $member) {
@@ -21,6 +22,11 @@ final class GetMemberByIdCommand extends ArtisanCommand
         }
 
         $this->info($member->getId() . ' ' . $member->getName());
+
+        /** @var \Example\Entities\Post $post */
+        foreach ($member->getPosts() as $post) {
+            $this->info("\t" . $post->getSubject() . ' - ' . $post->getBody());
+        }
     }
 
     protected function getArguments()

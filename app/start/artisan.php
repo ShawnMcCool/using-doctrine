@@ -15,3 +15,4 @@ Artisan::resolve(Example\ArtisanCommands\AddMemberCommand::class);
 Artisan::resolve(Example\ArtisanCommands\GetAllMembersCommand::class);
 Artisan::resolve(Example\ArtisanCommands\SortAllMembersCommand::class);
 Artisan::resolve(Example\ArtisanCommands\GetMemberByIdCommand::class);
+Artisan::resolve(Example\ArtisanCommands\AddMemberPostCommand::class);

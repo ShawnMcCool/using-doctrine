@@ -24,7 +24,8 @@ final class Member
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Example\Entities\Post", mappedBy="Example\Entities\Member")
+     * @ORM\OneToMany(targetEntity="Example\Entities\Post", mappedBy="author")
+     *
      **/
     private $posts;
 
@@ -60,5 +61,16 @@ final class Member
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * @param $subject
+     * @param $body
+     * @return Post
+     */
+    public function addPost($subject, $body)
+    {
+        $post = new Post($this, $subject, $body);
+        return $post;
     }
 }

@@ -23,17 +23,20 @@ final class Post
     private $body;
 
     /**
+     * @var \Example\Entities\Member
      * @ORM\ManyToOne(targetEntity="Example\Entities\Member", inversedBy="Example\Entities\Post")
-     **/
+     */
     private $author;
 
     /**
+     * @param Member $author
      * @param $subject
      * @param $body
      */
-    public function __construct($subject, $body)
+    public function __construct(Member $author, $subject, $body)
     {
         $this->id = PostId::generateNew();
+        $this->author = $author;
         $this->subject = $subject;
         $this->body = $body;
     }
