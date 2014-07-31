@@ -1,6 +1,7 @@
 <?php namespace Example\Entities;
 
 use Doctrine\ORM\Mapping AS ORM;
+use Example\ValueObjects\TagId;
 
 /**
  * @ORM\Entity
@@ -37,7 +38,7 @@ final class Tag
      */
     public function getId()
     {
-        return TogId::fromString($this->id);
+        return TagId::fromString($this->id);
     }
 
     /**

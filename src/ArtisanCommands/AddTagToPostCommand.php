@@ -38,8 +38,7 @@ final class AddTagToPostCommand extends ArtisanCommand
     {
         $query = $this->entityManager->createQuery('SELECT t FROM Example\Entities\Tag t where t.name = :name');
         $query->setParameter('name', $this->argument('tag_name'));
-        $tag = $query->setMaxResults(1)->getResult();
-        $tag = isset($tag[0]) ? $tag[0] : null;
+        $tag = $query->getFirstResult();
 
         if ( ! $tag) {
             $tag = new Tag($this->argument('tag_name'));

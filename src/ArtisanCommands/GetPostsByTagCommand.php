@@ -16,8 +16,7 @@ final class GetPostsByTagCommand extends ArtisanCommand
         $query = $this->entityManager->createQuery('SELECT t FROM Example\Entities\Tag t where t.name = :name');
         $query->setParameter('name', $this->argument('name'));
         /** @var Tag $tag */
-        $result = $query->getResult();
-        $tag = isset($result[0]) ? $result[0] : null;
+        $tag = $query->getFirstResult();
 
         if ( ! $tag) {
             $this->error('Sorry, a tag with that name could not be found');
