@@ -25,6 +25,22 @@ final class Name
     /**
      * @return string
      */
+    public function getFirstName()
+    {
+        return $this->getFirstName();
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return string
+     */
     public function getFullName()
     {
         return $this->firstName . ' ' . $this->lastName;
@@ -36,5 +52,15 @@ final class Name
     public function __toString()
     {
         return $this->getFullName();
+    }
+
+    /**
+     * @param Name $name
+     * @return bool
+     */
+    public function equals(Name $name)
+    {
+        return $this->getFirstName() == $name->getFirstName() &&
+            $this->getLastName() == $name->getLastName();
     }
 } 
