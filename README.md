@@ -2,7 +2,7 @@ Doctrine Examples
 =================
 This repository serves to highlight examples of how to accomplish various things with the Doctrine ORM version 2.5. For simplicity and interactivity, the actual code that would typically exist in the service layer is very unceremoniously dumped into artisan commands in [src/ArtisanCommands](src/ArtisanCommands).
 
-Please feel free to criticize the techniques by submitting an [issue](issues) or a [pull-request](pulls).
+Please feel free to criticize the techniques by submitting an [issue](https://github.com/ShawnMcCool/doctrine-examples/issues) or a [pull-request](https://github.com/ShawnMcCool/doctrine-examples/pulls).
 
 # Folder Breakdown
 
