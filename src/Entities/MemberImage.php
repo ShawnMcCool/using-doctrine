@@ -10,7 +10,7 @@ class MemberImage extends Image
 {
     /**
      * @var Member
-     * @ORM\ManyToOne(targetEntity="Member", inversedBy="image")
+     * @ORM\OneToOne(targetEntity="Member", inversedBy="image")
      */
     private $member;
 

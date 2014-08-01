@@ -3,23 +3,23 @@
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-final class AddImageToMemberCommand extends ArtisanCommand
+final class AddImageToPostCommand extends ArtisanCommand
 {
-    protected $name = 'app:add-image-to-member';
-    protected $description = 'Add an image to a member';
+    protected $name = 'app:add-image-to-post';
+    protected $description = 'Add an image to a post';
 
     public function fire()
     {
-        $member = $this->getMember();
+        $post = $this->getPost();
 
-        if ( ! $member) {
-            $this->error('Sorry, a member with that ID could not be found');
+        if ( ! $post) {
+            $this->error('Sorry, a post with that ID could not be found');
         }
 
         try {
-            $image = $member->addImage($this->argument('image_path'));
+            $image = $post->setImage($this->argument('image_path'));
 
-            $this->entityManager->persist($member);
+            $this->entityManager->persist($post);
             $this->entityManager->persist($image);
             $this->entityManager->flush();
         } catch(\Exception $e) {
@@ -29,15 +29,15 @@ final class AddImageToMemberCommand extends ArtisanCommand
         }
     }
 
-    private function getMember()
+    private function getPost()
     {
-        return $this->entityManager->find('Example\Entities\Member', $this->argument('member_id'));
+        return $this->entityManager->find('Example\Entities\Post', $this->argument('post_id'));
     }
 
     protected function getArguments()
     {
         return [
-            ['member_id', InputArgument::REQUIRED, 'member_id'],
+            ['post_id', InputArgument::REQUIRED, 'post_id'],
             ['image_path', InputArgument::REQUIRED, 'image_path'],
         ];
     }

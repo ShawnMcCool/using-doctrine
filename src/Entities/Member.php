@@ -79,7 +79,7 @@ class Member
      * @param string $path
      * @return MemberImage
      */
-    public function addImage($path)
+    public function setImage($path)
     {
         $image = new MemberImage($this, $path);
         $this->image = $image;

@@ -32,6 +32,11 @@ final class Post
     private $author;
 
     /**
+     * @ORM\OneToOne(targetEntity="PostImage", mappedBy="post")
+     */
+    private $image;
+
+    /**
      * @param Member $author
      * @param $subject
      * @param $body
@@ -90,5 +95,24 @@ final class Post
     public function addTag(Tag $tag)
     {
         $this->tags[] = $tag;
+    }
+
+    /**
+     * @param string $path
+     * @return PostImage
+     */
+    public function setImage($path)
+    {
+        $image = new PostImage($this, $path);
+        $this->image = $image;
+        return $image;
+    }
+
+    /**
+     * @return PostImage
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 } 

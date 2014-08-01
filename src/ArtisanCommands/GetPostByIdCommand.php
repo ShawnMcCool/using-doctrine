@@ -24,6 +24,11 @@ final class GetPostByIdCommand extends ArtisanCommand
         $this->info("post: {$post->getSubject()} - {$post->getBody()}");
         $this->info("\tauthor: {$author->getName()}");
 
+        $image = $post->getImage();
+        if ($image) {
+            $this->info("\timage: {$image->getPath()}");
+        }
+        
         /** @var Tag $tag */
         foreach ($post->getTags() as $tag) {
             $this->info("\ttag: {$tag->getName()}");
