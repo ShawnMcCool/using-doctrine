@@ -25,9 +25,9 @@ If you'd like to run these examples locally, a virtual machine configuration is 
 
 # Terms
 
-An **Entity** is fundamentally defined not by its attributes, but rather by a thread of continuity and identity. Two people may live in the same place and have the same name and even the same phone number, but they are two unique people with unique identities. Their 'selves' will not change even if they change their names. Objects that are referred to by an ID by default have identities (ID = identity) and are therefore entities. In this repository, an example is a [Member](src/Entities/Member.php).
+An **Entity** is fundamentally defined not by its attributes, but rather by a thread of continuity and identity. Two people may live in the same place and have the same name and even the same phone number, but they are two unique people with unique identities. Their 'selves' will not change even if they change their names. Objects that are referred to by an ID by default have identities (ID = identity) and are therefore entities (Evans 2003). In this repository, an example is a [Member](src/Entities/Member.php).
 
-A **Value Object** is an object that describes some characteristics of a thing but that itself doesn't have a conceptual identity. In this repository, an example is a [Name](src/ValueObjects/Name.php).
+A **Value Object** is an object that describes some characteristics of a thing but that itself doesn't have a conceptual identity (Evans 2003). In this repository, an example is a [Name](src/ValueObjects/Name.php).
 
 # Examples
 
