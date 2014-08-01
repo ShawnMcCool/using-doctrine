@@ -22,7 +22,13 @@ final class GetMemberByIdCommand extends ArtisanCommand
             return;
         }
 
+
         $this->info("member: {$member->getId()} {$member->getName()}");
+
+        $image = $member->getImage();
+        if ($image) {
+            $this->info("\timage: {$image->getPath()}");
+        }
 
         /** @var Post $post */
         foreach ($member->getPosts() as $post) {

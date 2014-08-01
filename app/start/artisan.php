@@ -20,3 +20,4 @@ Artisan::resolve(Example\ArtisanCommands\CompareNamesCommand::class);
 Artisan::resolve(Example\ArtisanCommands\AddTagToPostCommand::class);
 Artisan::resolve(Example\ArtisanCommands\GetPostByIdCommand::class);
 Artisan::resolve(Example\ArtisanCommands\GetPostsByTagCommand::class);
+Artisan::resolve(Example\ArtisanCommands\AddImageToMemberCommand::class);

@@ -23,8 +23,15 @@ class Member
      */
     private $name;
 
-    /** @ORM\OneToMany(targetEntity="Post", mappedBy="author") */
+    /**
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="author")
+     */
     private $posts;
+
+    /**
+     * @ORM\OneToOne(targetEntity="MemberImage", mappedBy="member")
+     */
+    private $image;
 
     /**
      * @param Name $name
@@ -58,6 +65,25 @@ class Member
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * @return MemberImage
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $path
+     * @return MemberImage
+     */
+    public function addImage($path)
+    {
+        $image = new MemberImage($this, $path);
+        $this->image = $image;
+        return $image;
     }
 
     /**
