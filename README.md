@@ -2,7 +2,9 @@ Doctrine Examples
 =================
 This repository serves to highlight examples of how to accomplish various things with the Doctrine ORM version 2.5. For simplicity and interactivity, the actual code that would typically exist in the service layer is very unceremoniously dumped into artisan commands in [src/ArtisanCommands](src/ArtisanCommands).
 
-Please feel free to criticize the techniques by submitting an [issue](https://github.com/ShawnMcCool/doctrine-examples/issues) or a [pull-request](https://github.com/ShawnMcCool/doctrine-examples/pulls).
+Doctrine is essentially a PHP implementation of the [Hibernate ORM](http://hibernate.org/orm/). Doctrine implements the [Data Mapper pattern](http://martinfowler.com/eaaCatalog/dataMapper.html) for the purpose of object-relational mapping. Data Mapper's biggest distinction from the (Active Record pattern)[http://www.martinfowler.com/eaaCatalog/activeRecord.html] in that Active Record entities are directly tied to a database table record and contain all of the behavior for interacting with the record within the entity itself, tying persistence behavior to the domain behavior of the object.
+
+Please feel free to criticize the information or techniques in this repository by submitting an [issue](https://github.com/ShawnMcCool/doctrine-examples/issues) or a [pull-request](https://github.com/ShawnMcCool/doctrine-examples/pulls).
 
 # Folder Breakdown
 
