@@ -1,8 +1,8 @@
 Doctrine Examples
 =================
-This is a repository to show simple examples of how to do things with Doctrine.
+This repository serves to highlight examples of how to accomplish various things with the Doctrine ORM version 2.5. For simplicity and interactivity, the actual code that would typically exist in the service layer is very unceremoniously dumped into artisan commands in [src/ArtisanCommands](src/ArtisanCommands).
 
-I decided (for now) to just throw the examples into artisan commands.
+Please feel free to criticize the techniques by submitting an [issue](issues) or a [pull-request](pulls).
 
 # Folder Breakdown
 
