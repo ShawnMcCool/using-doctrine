@@ -5,7 +5,6 @@ use Example\Entities\Tag;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-// php artisan app:get-member-by-id <id>
 final class GetPostsByTagCommand extends ArtisanCommand
 {
     protected $name = 'app:get-posts-by-tag';

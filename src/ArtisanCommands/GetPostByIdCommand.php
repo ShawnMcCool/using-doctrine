@@ -4,7 +4,6 @@ use Example\Entities\Post;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-// php artisan app:get-member-by-id <id>
 final class GetPostByIdCommand extends ArtisanCommand
 {
     protected $name = 'app:get-post-by-id';

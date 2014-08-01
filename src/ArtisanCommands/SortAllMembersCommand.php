@@ -5,7 +5,6 @@ use Example\Entities\Member;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-// php artisan app:sort-all-members
 final class SortAllMembersCommand extends ArtisanCommand
 {
     protected $name = 'app:sort-all-members';
